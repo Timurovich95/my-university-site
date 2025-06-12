@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DreamSite — Вдохновляющий проект</title>
+    <title>DreamSite Premium</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,35 +11,52 @@
     <header>
         <div class="overlay"></div>
         <div class="header-content">
-            <h1>DreamSite</h1>
-            <p>Создай что-то великое вместе с нами</p>
+            <h1>DreamSite <span>Premium</span></h1>
+            <p>Создай что-то великое уже сегодня</p>
             <a href="#about" class="btn">Узнать больше</a>
         </div>
     </header>
 
-    <section id="about" class="about-section">
+    <section id="about" class="about-section reveal">
         <h2>О нас</h2>
-        <p>Мы — команда мечтателей и разработчиков, которые создают современные решения для цифрового мира. Наши сайты красивы, легки и полезны.</p>
+        <p>Мы создаём уникальные веб-решения для бизнеса и творчества. Стиль, функциональность и инновации — основа наших проектов.</p>
     </section>
 
     <section class="cards-section">
-        <div class="card">
+        <div class="card reveal">
             <h3>Идеи</h3>
-            <p>Мы поможем воплотить ваши идеи в реальность с помощью новейших технологий и креативных решений.</p>
+            <p>Генерируем креативные и работающие концепции для вашего проекта.</p>
         </div>
-        <div class="card">
-            <h3>Проекты</h3>
-            <p>От лендингов до интернет-магазинов — мы создаём продукты, которыми можно гордиться.</p>
+        <div class="card reveal">
+            <h3>Дизайн</h3>
+            <p>Современный дизайн с акцентом на эстетику и удобство пользователя.</p>
         </div>
-        <div class="card">
+        <div class="card reveal">
             <h3>Поддержка</h3>
-            <p>Мы не просто делаем сайты, но и заботимся об их стабильности, обновлениях и развитии.</p>
+            <p>Постоянное развитие и обновление вашего сайта без лишних забот.</p>
         </div>
     </section>
 
     <footer>
-        <p>© 2025 DreamSite. Все права защищены.</p>
+        <p>© 2025 DreamSite Premium. Все права защищены.</p>
     </footer>
+
+    <script>
+        // Плавное появление элементов при прокрутке
+        const reveals = document.querySelectorAll('.reveal');
+
+        window.addEventListener('scroll', () => {
+            for(let i = 0; i < reveals.length; i++){
+                const windowHeight = window.innerHeight;
+                const revealTop = reveals[i].getBoundingClientRect().top;
+                const revealPoint = 150;
+
+                if(revealTop < windowHeight - revealPoint){
+                    reveals[i].classList.add('active');
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>
